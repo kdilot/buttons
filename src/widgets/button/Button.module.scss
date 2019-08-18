@@ -1,0 +1,546 @@
+@import "./ButtonAnimation.scss";
+@import "./Color.scss";
+
+@mixin btn-style($padding, $minWidth, $minHeight) {
+  padding: 0 $padding;
+  min-width: $minWidth;
+  min-height: $minHeight;
+}
+.btn {
+  background: $btnColor;
+  border: 1px;
+  font-size: 1rem;
+  color: $font;
+  cursor: pointer;
+  margin: 1rem;
+  text-transform: capitalize;
+}
+.btn:focus {
+  outline: none;
+}
+.small {
+  font-size: 0.8rem;
+  @include btn-style(0.3rem, 2rem, 2rem);
+}
+.medium {
+  @include btn-style(0.5rem, 2.3rem, 2.3rem);
+}
+.large {
+  font-size: 1.2rem;
+  @include btn-style(1rem, 2.5rem, 2.5rem);
+}
+.full {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.fade:hover {
+  background: $hover;
+  color: $hoverFont;
+  transition-duration: 0.5s;
+}
+
+.fadeLeftRight {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.fadeLeftRight:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 0 100%;
+  transition-duration: 0.5s;
+}
+.fadeLeftRight:hover {
+  color: $hoverFont;
+}
+.fadeLeftRight:hover:before {
+  transform: scaleX(1);
+}
+
+.fadeRightLeft {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.fadeRightLeft:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition-duration: 0.5s;
+}
+.fadeRightLeft:hover {
+  color: $hoverFont;
+}
+.fadeRightLeft:hover:before {
+  transform: scaleX(1);
+}
+
+.fadeTopBottom {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.fadeTopBottom:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $hover;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: 100% 0;
+  transition-duration: 0.5s;
+}
+.fadeTopBottom:hover {
+  color: $hoverFont;
+}
+.fadeTopBottom:hover:before {
+  transform: scaleY(1);
+}
+
+.fadeBottomTop {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.fadeBottomTop:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $hover;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: 0 100%;
+  transition-duration: 0.5s;
+}
+.fadeBottomTop:hover {
+  color: $hoverFont;
+}
+.fadeBottomTop:hover:before {
+  transform: scaleY(1);
+}
+
+.fadeHorizontalOut {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.fadeHorizontalOut:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 50% 0;
+  transition-duration: 0.5s;
+}
+.fadeHorizontalOut:hover {
+  color: $hoverFont;
+}
+.fadeHorizontalOut:hover:before {
+  transform: scaleX(1);
+}
+
+.fadeHorizontalIn {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+  background: $hover;
+}
+.fadeHorizontalIn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #606060;
+  z-index: -1;
+  transform: scaleX(1);
+  transform-origin: 50%;
+  transition-duration: 0.5s;
+}
+.fadeHorizontalIn:hover {
+  color: $hoverFont;
+}
+.fadeHorizontalIn:hover:before {
+  transform: scaleX(0);
+}
+
+.fadeVerticalOut {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.fadeVerticalOut:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $hover;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: 0 50%;
+  transition-duration: 0.5s;
+}
+.fadeVerticalOut:hover {
+  color: $hoverFont;
+}
+.fadeVerticalOut:hover:before {
+  transform: scaleY(1);
+}
+
+.fadeVerticalIn {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+  background: $hover;
+}
+.fadeVerticalIn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #606060;
+  z-index: -1;
+  transform: scaleY(1);
+  transform-origin: 50%;
+  transition-duration: 0.5s;
+}
+.fadeVerticalIn:hover {
+  color: $hoverFont;
+}
+.fadeVerticalIn:hover:before {
+  transform: scaleY(0);
+}
+
+.toplineLeftRight {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.toplineLeftRight:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 0 100%;
+  transition-duration: 0.5s;
+}
+.toplineLeftRight:hover:before {
+  transform: scaleX(1);
+}
+
+.toplineRightLeft {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.toplineRightLeft:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition-duration: 0.5s;
+}
+.toplineRightLeft:hover:before {
+  transform: scaleX(1);
+}
+
+.toplineHorizontalOut {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.toplineHorizontalOut:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 50% 0;
+  transition-duration: 0.5s;
+}
+.toplineHorizontalOut:hover:before {
+  transform: scaleX(1);
+}
+
+.bottomlineLeftRight {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.bottomlineLeftRight:before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 0 100%;
+  transition-duration: 0.5s;
+}
+.bottomlineLeftRight:hover:before {
+  transform: scaleX(1);
+}
+
+.bottomlineRightLeft {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.bottomlineRightLeft:before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition-duration: 0.5s;
+}
+.bottomlineRightLeft:hover:before {
+  transform: scaleX(1);
+}
+
+.bottomlineHorizontalOut {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transform: translateZ(0);
+}
+.bottomlineHorizontalOut:before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: $hover;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 50% 0;
+  transition-duration: 0.5s;
+}
+.bottomlineHorizontalOut:hover:before {
+  transform: scaleX(1);
+}
+
+.round {
+  color: $font;
+  transition-duration: 0.5s;
+  border-radius: 0;
+}
+.round:hover {
+  background: $hover;
+  color: $hoverFont;
+  transition-duration: 0.5s;
+  border-radius: 15px;
+}
+
+.sizeUp {
+  transition-duration: 0.5s;
+}
+.sizeUp:hover {
+  background: $hover;
+  color: $hoverFont;
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.sizeDown {
+  transition-duration: 0.5s;
+}
+.sizeDown:hover {
+  background: $hover;
+  color: $hoverFont;
+  transform: scale(0.8);
+  transition-duration: 0.5s;
+}
+
+.pull:hover {
+  animation: pullEffect 0.5s;
+}
+
+.push:hover {
+  animation: pushEffect 0.5s;
+}
+
+.outlineShrink {
+  position: relative;
+}
+.outlineShrink:hover {
+  background: $hover;
+  color: $hoverFont;
+}
+.outlineShrink:before {
+  position: absolute;
+  content: "";
+  border: 5px solid $hover;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  opacity: 0;
+  transition-property: top, left, right, bottom;
+  transition-duration: 0.5s;
+}
+.outlineShrink:hover:before {
+  animation: outlineShrink 0.5s infinite;
+}
+
+.outlineSpread {
+  position: relative;
+}
+.outlineSpread:hover {
+  background: $hover;
+  color: $hoverFont;
+}
+.outlineSpread:before {
+  position: absolute;
+  content: "";
+  border: 5px solid $hover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition-property: top, left, right, bottom;
+  transition-duration: 0.5s;
+}
+.outlineSpread:hover:before {
+  opacity: 1;
+  animation: outlineSpread 0.5s infinite;
+}
+
+.shakeHorizontal:hover {
+  background: $hover;
+  color: $hoverFont;
+  animation: shakeHor 0.3s infinite;
+}
+
+.shakeVertical:hover {
+  background: $hover;
+  color: $hoverFont;
+  animation: shakeVer 0.3s infinite;
+}
+
+.shakeTwist:hover {
+  background: $hover;
+  color: $hoverFont;
+  animation: shakeTwist 0.2s infinite;
+}
+
+.blinking:hover {
+  background: $hover;
+  color: $hoverFont;
+  animation: blinking 0.5s infinite;
+}
+
+.sizeSpread:hover {
+  animation: sizeSpread 0.5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.sizeShrink:hover {
+  animation: sizeShrink 0.5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.hideTop {
+  transition-duration: 0.7s;
+  transform: scaleY(1);
+  transform-origin: top;
+}
+.hideTop:hover {
+  transform: scaleY(0);
+  background: $hover;
+  color: $hoverFont;
+}
+
+.hideBottom {
+  transition-duration: 0.7s;
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+.hideBottom:hover {
+  transform: scaleY(0);
+  background: $hover;
+  color: $hoverFont;
+}
+
+.hideLeft {
+  transition-duration: 0.7s;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.hideLeft:hover {
+  transform: scaleX(0);
+  background: $hover;
+  color: $hoverFont;
+}
+
+.hideRight {
+  transition-duration: 0.7s;
+  transform: scaleX(1);
+  transform-origin: right;
+}
+.hideRight:hover {
+  transform: scaleX(0);
+  background: $hover;
+  color: $hoverFont;
+}
