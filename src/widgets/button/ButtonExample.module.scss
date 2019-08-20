@@ -1,0 +1,17 @@
+.wrapper {
+  h1 {
+    color: white;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    text-transform: capitalize;
+  }
+  span {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    margin: 2rem;
+    padding: 0.5rem;
+    border-bottom: 2px solid white;
+  }
+}
